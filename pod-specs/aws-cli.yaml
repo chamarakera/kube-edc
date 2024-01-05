@@ -1,0 +1,18 @@
+# Pod spec to troubleshoot AWS IAM related settings
+apiVersion: v1
+kind: Pod
+metadata:
+  name: edc-awscli
+  # annotations:
+  #   iam.amazonaws.com/role: xxx
+spec:
+  containers:
+    - name: edc-awscli
+      image: cimg/aws:2023.03
+      command: ["/bin/sh", "-c", "--"]
+      args: ["while true; do sleep 30; done;"]
+      #serviceAccountName: xxx
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "50m"
