@@ -1,0 +1,16 @@
+# Pod for Kubernetes network trouble-shooting
+# https://github.com/nicolaka/netshoot
+apiVersion: v1
+kind: Pod
+metadata:
+  name: edc-netshoot
+spec:
+  containers:
+    - name: edc-netshoot
+      image: nicolaka/netshoot
+      command: ["/bin/bash", "-c", "--"]
+      args: ["while true; do sleep 30; done;"]
+      resources:
+        limits:
+          memory: "128Mi"
+          cpu: "50m"
