@@ -1,17 +1,18 @@
 # Pod spec to troubleshoot AWS IAM related settings
+# This spec supports both IAM role assignment Kube2IAM and IRSA
 apiVersion: v1
 kind: Pod
 metadata:
   name: edc-awscli
   # annotations:
-  #   iam.amazonaws.com/role: xxx
+  #   iam.amazonaws.com/role: kube2iam-role
 spec:
   containers:
     - name: edc-awscli
       image: cimg/aws:2023.03
       command: ["/bin/sh", "-c", "--"]
       args: ["while true; do sleep 30; done;"]
-      #serviceAccountName: xxx
+      #serviceAccountName: irsa-role
       resources:
         limits:
           memory: "128Mi"
