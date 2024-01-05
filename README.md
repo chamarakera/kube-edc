@@ -1,1 +1,3 @@
-# Every Day Carry for a K8s Troubleshooter
+# Everyday Carry for a Kubernetes Troubleshooter
+
+This repository contains a variety of tools and utilities required for troubleshooting/testing Kubernetes workloads.
